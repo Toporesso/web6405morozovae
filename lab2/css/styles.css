@@ -1,4 +1,3 @@
-/* Общие стили */
 body {
     font-family: Arial, sans-serif;
     color: #333;
@@ -18,18 +17,17 @@ body {
     display: block;
     border-radius: 8px;
 }
-/* Добавляем отступы для основного содержимого */
+
 section {
-    width: 90%;       /* Ограничиваем ширину содержимого */
-    max-width: 1400px; /* Устанавливаем максимальную ширину для удобства чтения */
-    margin: 2% auto; /* Отцентровываем контент и добавляем вертикальные отступы */
-    padding: 2%;    /* Внутренние отступы для разделов */
+    width: 90%;
+    max-width: 1400px;
+    margin: 2% auto;
+    padding: 2%;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Добавляем лёгкую тень для красоты */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Стили для заголовков и навигации */
 header {
     background-color: #333;
     color: white;
@@ -41,7 +39,6 @@ header h1 {
     margin: 0;
 }
 
-/* Стили для навигации */
 nav ul {
     list-style: none;
     padding: 0;
@@ -61,7 +58,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Стили для таблицы */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -78,13 +74,11 @@ th {
     color: white;
 }
 
-/* Стили для изображений */
 img {
     display: block;
     margin: 0 auto;
 }
 
-/* Стили для подвала */
 footer {
     background-color: #333;
     color: white;
