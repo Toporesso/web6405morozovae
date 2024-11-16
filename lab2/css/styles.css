@@ -1,0 +1,94 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4%;
+}
+.image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+/* Добавляем отступы для основного содержимого */
+section {
+    width: 90%;       /* Ограничиваем ширину содержимого */
+    max-width: 1400px; /* Устанавливаем максимальную ширину для удобства чтения */
+    margin: 2% auto; /* Отцентровываем контент и добавляем вертикальные отступы */
+    padding: 2%;    /* Внутренние отступы для разделов */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Добавляем лёгкую тень для красоты */
+}
+
+/* Стили для заголовков и навигации */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Стили для навигации */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+/* Стили для изображений */
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Стили для подвала */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
