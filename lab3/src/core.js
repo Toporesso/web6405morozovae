@@ -3,7 +3,7 @@
  * @param {*} n
  */
 function isInteger(n) {
-    return (n === (n | 0))
+    return (n === (n | 0));
 }
 
 /**
