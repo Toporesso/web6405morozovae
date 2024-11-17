@@ -10,38 +10,75 @@ function isInteger(n) {
  * Напишите функцию, которая возвращает массив четных чисел от 2 до 20 включительно
  */
 function even() {
-    return [for i = 2;]
+    let res = [];
+    for (let i = 2; i <= 20; i++) {
+        res.push(i);
+    }
+    return res;
 }
 
 /**
  * Напишите функцию, считающую сумму чисел до заданного используя цикл
  * @param {*} n
  */
-function sumTo(n) {}
+function sumTo(n) {
+    let sum = 0;
+    for (let i = 0; i <= n; i++) {
+        sum += i;
+    }
+    return sum;
+}
 
 /**
  * Напишите функцию, считающую сумму чисел до заданного используя рекурсию
  * @param {*} n
  */
-function recSumTo(n) {}
+function recSumTo(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+    return n + recSumTo(n - 1)
+}
 
 /**
  * Напишите функцию, считающую факториал заданного числа
  * @param {*} n
  */
-function factorial(n) {}
+function factorial(n) {
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
 
 /**
  * Напишите функцию, которая определяет, является ли число двойкой, возведенной в степень
  * @param {*} n
  */
-function isBinary(n) {}
+function isBinary(n) {
+    while (n > 1) {
+        if (n % 2 === 0) {
+            n /= 2;
+        }
+        else {
+            return false;
+        }
+    }
+    return true;
+}
 
 /**
  * Напишите функцию, которая находит N-е число Фибоначчи
  * @param {*} n
  */
-function fibonacci(n) {}
+function fibonacci(n) {
+    let res = [1, 1];
+    for (let i = 2; i <= n; i++) {
+        res.push(res[i - 2] + res[i - 1]);
+    }
+    return res[n - 1];
+}
 
 /** Напишите функцию, которая принимает начальное значение и функцию операции
  * и возвращает функцию - выполняющую эту операцию.
@@ -54,7 +91,20 @@ function fibonacci(n) {}
  * console.log(sumFn(5)) - 15
  * console.log(sumFn(3)) - 18
  */
-function getOperationFn(initialValue, operatorFn) {}
+function getOperationFn(initialValue, operatorFn) {
+    if (operatorFn) {
+        let storedValue = initialValue;
+        return function (newValue) {
+            storedValue = operatorFn(storedValue, newValue);
+            return storedValue;
+        };
+    }
+    else {
+        return function () {
+            return initialValue;
+        };
+    }
+}
 
 /**
  * Напишите функцию создания генератора арифметической последовательности.
@@ -72,7 +122,14 @@ function getOperationFn(initialValue, operatorFn) {}
  * console.log(generator()); // 7
  * console.log(generator()); // 9
  */
-function sequence(start, step) {}
+function sequence(start = 0, step = 1) {
+    let current = start;
+    return function() {
+        const result = current;
+        current += step;
+        return result;
+    };
+}
 
 /**
  * Напишите функцию deepEqual, которая принимает два значения
@@ -88,7 +145,22 @@ function sequence(start, step) {}
  * deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 33], text: 'text'}) // true
  * deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 3], text: 'text2'}) // false
  */
-function deepEqual(firstObject, secondObject) {}
+function deepEqual(firstObject, secondObject) {
+    if (firstObject === secondObject) return true;
+    if (typeof firstObject !== "object" || firstObject === null || typeof secondObject !== "object" || secondObject === null) {
+        return false;
+    }
+
+    let keys1 = Object.keys(firstObject), keys2 = Object.keys(secondObject);
+    if (keys1.length !== keys2.length) return false;
+
+    for (let key of keys1) {
+        if (!keys2.includes(key) || !deepEqual(firstObject[key], secondObject[key])) {
+            return false;
+        }
+    }
+    return true;
+}
 
 module.exports = {
     isInteger,
@@ -102,3 +174,21 @@ module.exports = {
     sequence,
     deepEqual,
 };
+
+
+
+console.log(isInteger(5)); // true
+console.log(even()); // [2, 4, 6, ..., 20]
+console.log(sumTo(5)); // 15
+console.log(recSumTo(5)); // 15
+console.log(factorial(5)); // 120
+console.log(isBinary(8)); // true
+console.log(isBinary(10)); // false
+console.log(fibonacci(6)); // 8
+console.log(getOperationFn(10, (a, b) => a + b)(5)); // 15
+console.log(getOperationFn(10)(5)); // 10 (если нет операции)
+let seqGen = sequence(5, 2);
+console.log(seqGen()); // 5
+console.log(seqGen()); // 7
+console.log(deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 33], text: 'text'})); // true
+console.log(deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 3], text: 'text2'})); // false
