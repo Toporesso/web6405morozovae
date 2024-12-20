@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О компании</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="specs.html">Характеристики</a></li>
+      <li><a href="shops.html">Магазины</a></li>
+      <li><a href="form.html">Форма</a></li>
+      <li><a href="about.html">О нас</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <h1>Форма ввода данных</h1>
+  <form id="dataForm">
+    <label for="name">Имя:</label>
+    <input type="text" id="name" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required><br><br>
+
+    <label for="age">Возраст:</label>
+    <input type="number" id="age" required><br><br>
+
+    <button type="submit" class="submit-button">Отправить</button>
+  </form>
+
+  <div id="tablesContainer" style="display: none;">
+    <h2>Данные</h2>
+    <div class="table" id="table1"></div>
+    <div class="table" id="table2"></div>
+    <div class="table" id="table3"></div>
+  </div>
+
+  <script src="../js/prov.js"></script>
+</main>
+<footer>
+  <p>&copy; 2024 ROG Zephyrus | Все права защищены</p>
+</footer>
+</body>
+</html>
