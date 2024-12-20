@@ -1,7 +1,0 @@
-{
-  "/home": {
-    "get": {
-      "data": [{ "name": "G16 pro", "gpu": "4060 ti", "cpu": "intel 7" }]
-    }
-  }
-}
